@@ -1,0 +1,14 @@
+getenv   = True
+Universe = vanilla
++JobFlavour = "workday"
+Executable = submit_llcpo.sh
+arguments = $(op)
+output                = condor_log/job.$(ClusterId).$(ProcId).$(op).out
+error                 = condor_log/job.$(ClusterId).$(ProcId).$(op).err
+log                   = condor_log/job.$(ClusterId).$(op).log
+
+should_transfer_files = YES
+transfer_input_files = MG5_aMC_v2_6_5.tar.gz, launch_llcpo.tar.xz
+when_to_transfer_output = ON_EXIT
+ 
+Queue 1 op in (cGtil cWtil cHGtil cHWtil cHBtil cHWBtil cuGIm ctGIm cuWIm ctWIm cuBIm ctBIm cdGIm cbGIm cdWIm cbWIm cdBIm cbBIm cuHIm ctHIm cdHIm cbHIm cHudIm cHtbIm cutbd1Im cutbd8Im cjQtu1Im cjQtu8Im cjQbd1Im cjQbd8Im cjujd1Im cjujd8Im cjujd11Im cjujd81Im cQtjd1Im cQtjd8Im cjuQb1Im cjuQb8Im cQujb1Im cQujb8Im cjtQd1Im cjtQd8Im cQtQb1Im cQtQb8Im ceHIm ceWIm ceBIm cledjIm clebQIm cleju1Im cleju3Im cleQt1Im cleQt3Im)
