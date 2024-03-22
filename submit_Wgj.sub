@@ -1,0 +1,14 @@
+getenv   = True
+Universe = vanilla
++JobFlavour = "workday"
+Executable = submit_Wgj.sh
+arguments = $(op)
+output                = condor_log/job.$(ClusterId).$(ProcId).$(op).out
+error                 = condor_log/job.$(ClusterId).$(ProcId).$(op).err
+log                   = condor_log/job.$(ClusterId).$(op).log
+
+should_transfer_files = YES
+transfer_input_files = MG5_aMC_v2_6_5.tar.gz, launch_Wgj.tar.xz
+when_to_transfer_output = ON_EXIT
+ 
+Queue 1 op in (cG cW cH cHbox cHDD cHG cHW cHB cHWB cuHRe ctHRe cdHRe cbHRe cuGRe ctGRe cuWRe ctWRe cuBRe ctBRe cdGRe cbGRe cdWRe cbWRe cdBRe cbBRe cHj1 cHQ1 cHj3 cHQ3 cHu cHt cHd cHbq cHudRe cHtbRe cjj11 cjj18 cjj31 cjj38 cQj11 cQj18 cQj31 cQj38 cQQ1 cQQ8 cuu1 cuu8 ctt ctu1 ctu8 cdd1 cdd8 cbb cbd1 cbd8 cud1 ctb1 ctd1 cbu1 cud8 ctb8 ctd8 cbu8 cutbd1Re cutbd8Re cju1 cQu1 cju8 cQu8 ctj1 ctj8 cQt1 cQt8 cjd1 cjd8 cQd1 cQd8 cbj1 cbj8 cQb1 cQb8 cjQtu1Re cjQtu8Re cjQbd1Re cjQbd8Re cjujd1Re cjujd8Re cjujd11Re cjujd81Re cQtjd1Re cQtjd8Re cjuQb1Re cjuQb8Re cQujb1Re cQujb8Re cjtQd1Re cjtQd8Re cQtQb1Re cQtQb8Re ceHRe ceWRe ceBRe cHl1 cHl3 cHe cll cll1 clj1 clj3 cQl1 cQl3 cee ceu cte ced cbe cje cQe clu ctl cld cbl cle cledjRe clebQRe cleju1Re cleQt1Re cleju3Re cleQt3Re cGtil cWtil cHGtil cHWtil cHBtil cHWBtil cuGIm ctGIm cuWIm ctWIm cuBIm ctBIm cdGIm cbGIm cdWIm cbWIm cdBIm cbBIm cuHIm ctHIm cdHIm cbHIm cHudIm cHtbIm cutbd1Im cutbd8Im cjQtu1Im cjQtu8Im cjQbd1Im cjQbd8Im cjujd1Im cjujd8Im cjujd11Im cjujd81Im cQtjd1Im cQtjd8Im cjuQb1Im cjuQb8Im cQujb1Im cQujb8Im cjtQd1Im cjtQd8Im cQtQb1Im cQtQb8Im ceHIm ceWIm ceBIm cledjIm clebQIm cleju1Im cleju3Im cleQt1Im cleQt3Im)
