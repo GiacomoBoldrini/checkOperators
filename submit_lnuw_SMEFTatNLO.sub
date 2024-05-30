@@ -1,0 +1,14 @@
+getenv   = True
+Universe = vanilla
++JobFlavour = "workday"
+Executable = submit_lnuw_SMEFTatNLO.sh
+arguments = $(op)
+output                = condor_log/job.$(ClusterId).$(ProcId).$(op).out
+error                 = condor_log/job.$(ClusterId).$(ProcId).$(op).err
+log                   = condor_log/job.$(ClusterId).$(op).log
+
+should_transfer_files = YES
+transfer_input_files = MG5_aMC_v2_6_5.tar.gz, launch_lnuw_SMEFTatNLO.tar.xz
+when_to_transfer_output = ON_EXIT
+ 
+Queue 1 op in (cQlM1 cQlM2 cQl31 cQl32 cQe1 cQe2 ctl1 ctl2 cte1 cte2 cQlM3 cQl33 cQe3 ctl3 cte3 ctlS3 ctlT3 cblS3 cQq83 cQq81 cQu8 ctq8 cQd8 ctu8 ctd8 cQq13 cQq11 cQu1 ctq1 cQd1 ctu1 ctd1 cQQ8 cQQ1 cQt1 ctt1 cQt8 cll1111 cll2222 cll3333 cll1122 cll1133 cll2233 cll1221 cll1331 cll2332 cpDC cpWB cdp cp cWWW cG cpG cpW cpBB cpl1 cpl2 cpl3 c3pl1 c3pl2 c3pl3 cpe cpmu cpta cpqMi cpq3i cpQ3 cpQM cpu cpt cpd ctp ctZ ctW ctG)
